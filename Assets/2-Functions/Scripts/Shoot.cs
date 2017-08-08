@@ -26,6 +26,15 @@ namespace Functions
                 Shooting();
                 shootTimer = 0f;
             }
+         
+        }
+
+        void OnCollisionEnter(Collision col)
+        {
+            if (col.gameObject.tag == "enemy")
+            {
+                Destroy(col.gameObject);
+            }
         }
 
         void Shooting()

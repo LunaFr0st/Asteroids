@@ -17,6 +17,14 @@ public class SeekAndDestroy : MonoBehaviour
     void Update()
     {
         //Destroys the gameObject the script is attached to after a period of time
+        
         Destroy(gameObject, AliveTime);
+    }
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Enemy")
+        {
+            Destroy(col.gameObject);
+        }
     }
 }
