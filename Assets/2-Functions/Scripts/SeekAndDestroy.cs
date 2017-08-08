@@ -16,6 +16,7 @@ public class SeekAndDestroy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Destroys the gameObject the script is attached to after a period of time
         Destroy(gameObject, AliveTime);
     }
 }
