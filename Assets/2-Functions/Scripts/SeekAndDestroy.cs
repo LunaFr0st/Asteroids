@@ -7,7 +7,7 @@ public class SeekAndDestroy : MonoBehaviour
     public float AliveTime = 1f;
 
 
-    // Use this for initialization
+    // Use this for initialisation (Corrected spelling for Australian English)
     void Start()
     {
 
