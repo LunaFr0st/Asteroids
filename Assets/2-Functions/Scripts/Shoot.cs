@@ -7,6 +7,7 @@ namespace Functions
 {
     public class Shoot : MonoBehaviour
     {
+        public GameObject spawnPoint;
         public GameObject projectilePrefab;
         public float projectileSpeed = 10f;
         public float fireRate = 0.1f;
@@ -41,7 +42,7 @@ namespace Functions
         {
             GameObject projectile = Instantiate(projectilePrefab);
             // Projectile's position = Transform position
-            projectile.transform.position = transform.position;
+            projectile.transform.position = spawnPoint.transform.position;
             Rigidbody2D rigid = projectile.GetComponent<Rigidbody2D>();
             rigid.AddForce(transform.right * projectileSpeed, ForceMode2D.Impulse);
             Rigid.AddForce(-transform.right * recoil, ForceMode2D.Impulse);
