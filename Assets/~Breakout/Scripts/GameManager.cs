@@ -50,6 +50,7 @@ namespace Breakout
                 {
                     GameObject block = GetRandomBlock();
                     Vector2 pos = new Vector3(x * spacing.x, y * spacing.y);
+                    pos += offset;
                     block.transform.position = pos;
                     spawnedBlocks[x, y] = block;
                 }
