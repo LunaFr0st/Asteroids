@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Breakout
 {
     public class GameManager : MonoBehaviour
     {
+        public Toggle timeToggle;
         public int width = 20;
         public int height = 20;
         public GameObject[] blockPrefabs;
@@ -14,24 +16,15 @@ namespace Breakout
 
         [Header("Debug")]
         public bool isDebugging = false;
+        public bool isTimeScale = false;
         private GameObject[,] spawnedBlocks;
 
         // Use this for initialization
         void Start()
         {
             GenerateBlocks();
+            timeToggle.isOn = false;
         }
-
-        // Function with Arguments
-        /*  GameObject GetBlockByIndex(int index)
-          {
-              if (index > blockPrefabs.Length || index < 0)
-              {
-                  return null;
-              }
-              GameObject clone = Instantiate(blockPrefabs[index]);
-              return clone;
-          }*/
 
         GameObject GetRandomBlock()
         {
@@ -78,6 +71,18 @@ namespace Breakout
             if (isDebugging)
             {
                 UpdateBlocks();
+            }
+            TimeToggleScaler();
+        }
+        void TimeToggleScaler()
+        {
+            if (timeToggle.isOn == true)
+            {
+                Time.timeScale = 2;
+            }
+            else
+            {
+                Time.timeScale = 1;
             }
         }
     }

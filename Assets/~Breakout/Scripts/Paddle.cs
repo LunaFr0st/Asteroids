@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Breakout
 {
     public class Paddle : MonoBehaviour
     {
+        public Button startButton;
         public float movementSpeed = 20f;
         public Ball currentBall;
         public Vector2[] directions = new Vector2[]
