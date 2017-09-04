@@ -41,7 +41,7 @@ namespace Billiards
         {
             rigid.AddForce(dir * impactForce, ForceMode.Impulse);
         }
-        void OnTriggerEnter(Collision other)
+        void OnTriggerEnter(Collider other)
         {
             if(other.gameObject.tag == "BallRemover")
             {
