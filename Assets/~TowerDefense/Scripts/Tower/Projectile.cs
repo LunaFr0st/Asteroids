@@ -12,17 +12,17 @@ namespace TowerDefense
         void Update()
         {
             Vector3 velocity = direction.normalized * speed;
-            direction += velocity * Time.deltaTime;
+            transform.position += velocity * Time.deltaTime;
         }
         void OnTriggerEnter(Collider col)
         {
-            Enemy e = GetComponent<Enemy>();
+            Enemy e = col.GetComponent<Enemy>();
             if (e != null)
             {
                 e.DealDamage(damage);
                 Destroy(gameObject);
             }
-            if(col.name == "Ground")
+            if(col.tag == "Ground")
             {
                 Destroy(gameObject);
             }
