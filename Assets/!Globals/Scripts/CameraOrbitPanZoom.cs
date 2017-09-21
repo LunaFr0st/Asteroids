@@ -47,7 +47,7 @@ public class CameraOrbitPanZoom : MonoBehaviour
     }
     void Pan()
     {
-        float iX = -Input.GetAxis("Mouse X");
+        float iX = Input.GetAxis("Mouse X");
         float iY = Input.GetAxis("Mouse Y");
         Vector3 inputDir = new Vector3(iX, iY);
         Vector3 movement = transform.TransformDirection(inputDir);
