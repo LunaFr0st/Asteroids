@@ -7,8 +7,11 @@ namespace Inheritance
     {
         [Header("Charger")]
         public float knockback = 10f;
-
-        public override void Attack()
+        protected override void Update()
+        {
+            base.Update();
+        }
+        protected override void Attack()
         {
             base.Attack();
         }
