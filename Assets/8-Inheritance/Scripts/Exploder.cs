@@ -20,11 +20,11 @@ namespace Inheritance
         protected override void Update()
         {
             base.Update();
+            explosionTimer += Time.deltaTime;
         }
         protected override void Attack()
         {
             base.Attack();
-            explosionTimer += Time.deltaTime;
             if (explosionTimer >= explosionRate)
             {
                 Explode();
