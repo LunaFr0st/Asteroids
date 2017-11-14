@@ -22,6 +22,7 @@ namespace PaperMarioClone
         private Vector3 movement;
         private Vector3 inputDirection;
         private bool jump = false;
+        private bool instantJump = false;
 
         void Awake()
         {
@@ -49,12 +50,20 @@ namespace PaperMarioClone
             {
                 gravity += Physics.gravity * Time.deltaTime;
             }
+            if (instantJump)
+            {
+                gravity.y = jumpHeight;
+                instantJump = false;
+            }
             movement += gravity;
             controller.Move(movement * Time.deltaTime);
         }
-        public void Jump()
+        public void Jump(bool instant = false)
         {
-            jump = true;
+            if (instant)
+                instantJump = true;
+            else
+                jump = true;
         }
         public void Move(float iH, float iV)
         {
