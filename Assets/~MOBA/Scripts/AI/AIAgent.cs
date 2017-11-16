@@ -46,7 +46,7 @@ namespace MOBA
         {
             velocity += force * Time.deltaTime;
             nav.speed = velocity.magnitude;
-            if (velocity.magnitude > 0)
+            if (velocity.magnitude > 0 && nav.updatePosition)
             {
                 if (velocity.magnitude > maxSpeed)
                 {
